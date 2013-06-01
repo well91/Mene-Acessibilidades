@@ -1,0 +1,1 @@
+inspetores_controller.rb

@@ -1,0 +1,3 @@
+class DetalhesInspecaoController < ApplicationController
+
+end

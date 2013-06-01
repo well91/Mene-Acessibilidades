@@ -1,0 +1,3 @@
+class InspecoesController < ApplicationController
+
+end
