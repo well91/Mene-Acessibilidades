@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601191043) do
+ActiveRecord::Schema.define(:version => 20130601204928) do
 
   create_table "caracteristicas", :force => true do |t|
     t.string   "nome"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130601191043) do
     t.integer  "inspecao_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "comentario"
   end
 
   add_index "detalhe_inspecoes", ["caracteristica_id"], :name => "index_detalhe_inspecoes_on_caracteristica_id"
