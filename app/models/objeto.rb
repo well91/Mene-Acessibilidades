@@ -16,4 +16,17 @@ class Objeto < ActiveRecord::Base
   def local_inexistente
     errors.add(:local_id, "Local inexistente") if Local.where(:id => local_id).empty?
   end
+
+  def self.buscar_objeto_por_id(id)
+    Objeto.where(:id => id).first
+  end
+
+  def self.buscar_objetos_por_local(id)
+    Objeto.where(:local_id => id)
+  end
+
+  def self.buscar_objetos_por_categoria(id)
+    Objeto.where(:categoria_id => id)
+  end
+
 end
