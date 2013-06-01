@@ -8,6 +8,6 @@ class Caracteristica < ActiveRecord::Base
   validate :categoria_inexistente
 
   def categoria_inexistente
-	errors.add(:categoria_id, "Categoria inexistente") if Categoria.where(:id => categoria_id).empty? 	 
+	  errors.add(:categoria_id, "Categoria inexistente") if Categoria.where(:id => categoria_id).empty? 	 
   end
 end
