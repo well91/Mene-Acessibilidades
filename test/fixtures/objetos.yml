@@ -3,7 +3,9 @@
 one:
   nome: MyString
   local: 
+  categoria: 
 
 two:
   nome: MyString
   local: 
+  categoria: 
