@@ -3,6 +3,7 @@ class Inspecao < ActiveRecord::Base
   belongs_to :objeto
   has_many :detalhes_inspecao
   attr_accessible :data, :status
+  attr_accessor :status
 
   #STATUS DE INSPECAO
   APROVADA = 1
@@ -21,9 +22,7 @@ class Inspecao < ActiveRecord::Base
   validate :objeto_invalido
   validate :status_invalido
 
-  def initialize
-    status = PENDENTE
-  end
+  
   def inspetor_invalido
   	errors.add(:inspetor_id, "Inspetor invalido") if Inspetor.where(:id => inspetor_id).empty?
   end
@@ -37,15 +36,19 @@ class Inspecao < ActiveRecord::Base
   end
 
   def aprovar_inspecao
-    status = APROVADA
+    write_attribute(:status,APROVADA)
   end
 
   def reprovar_inspecao
-    status = REPROVADA
+    write_attribute(:status, REPROVADA)
   end
 
   def reagendar_inspecao
-    status = REAGENDADA
+    write_attribute(:status, REAGENDADA)
+  end
+
+  def marcar_como_pendente
+    write_attribute(:status,PENDENTE)
   end
 
   def self.buscar_inspecoes_entre data_inicial, data_final
