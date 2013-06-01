@@ -21,6 +21,9 @@ class Inspecao < ActiveRecord::Base
   validate :objeto_invalido
   validate :status_invalido
 
+  def initialize
+    status = PENDENTE
+  end
   def inspetor_invalido
   	errors.add(:inspetor_id, "Inspetor invalido") if Inspetor.where(:id => inspetor_id).empty?
   end
@@ -47,5 +50,25 @@ class Inspecao < ActiveRecord::Base
 
   def self.buscar_inspecoes_entre data_inicial, data_final
     Inspecao.where('data > ? and data < ?', data_inicial, data_final)
+  end
+
+  def self.buscar_inspecoes_de_funcionario id_funcionario
+    Inspecao.where(:funcionario_id => id_funcionario)
+  end
+
+  def self.buscar_aprovadas
+    Inspecao.where(:status => APROVADA)
+  end
+
+  def self.buscar_reprovadas
+    Inspecao.where(:status => REPROVADA)
+  end
+
+  def self.buscar_reagendadas
+    Inspecao.where(:status => REAGENDADA)
+  end
+
+  def self.buscar_pendentes
+    Inspecao.where(:status => PENDENTE)
   end
 end
