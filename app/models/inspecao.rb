@@ -32,4 +32,20 @@ class Inspecao < ActiveRecord::Base
   def status_invalido
   	errors.add(:status, "Status invalido") unless INSPECOES_STATUS.has_key?(status)
   end
+
+  def aprovar_inspecao
+    status = APROVADA
+  end
+
+  def reprovar_inspecao
+    status = REPROVADA
+  end
+
+  def reagendar_inspecao
+    status = REAGENDADA
+  end
+
+  def self.buscar_inspecoes_entre data_inicial, data_final
+    Inspecao.where('data > ? and data < ?', data_inicial, data_final)
+  end
 end
