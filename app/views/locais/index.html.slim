@@ -1,4 +1,4 @@
-index.html.slim.titulo
+.titulo
 	h2 Locais
 
 .menu
@@ -17,7 +17,7 @@ table.table.table-hover
 						td 
 							=link_to("Editar", edit_local_path(local.id))
 							|&nbsp
-							=link_to("Excluir", local, :method => :delete, :confirm => "Tem certeza de que deseja excluir a local #{local.nome}?")
+							=link_to("Excluir", local_path(local.id), :method => :delete, :confirm => "Tem certeza de que deseja excluir a local #{local.nome}?")
 		- else
 			tbody
 				tr#vazia

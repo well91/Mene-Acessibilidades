@@ -1,0 +1,11 @@
+.titulo
+  h2 = @objeto.nome
+
+.detalhes
+  h3 Detalhes
+  ul
+    li = "Local: #{@objeto.local.nome}"
+    li = "Categoria: #{@objeto.categoria.nome}"
+
+.menu
+  = link_to("Voltar", objetos_path )

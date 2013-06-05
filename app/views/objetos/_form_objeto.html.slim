@@ -1,0 +1,9 @@
+= simple_form_for objeto, :html => {:class => 'form-inline'} do |form_builder|
+  =form_builder.input :nome
+
+  =form_builder.association :local, label_method: :nome, value_method: :id, include_blank: false
+  =form_builder.association :categoria, label_method: :nome, value_method: :id, include_blank: false
+
+  .form_actions
+  =form_builder.submit
+  = link_to 'Voltar', objetos_path

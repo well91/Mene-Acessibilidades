@@ -19,7 +19,7 @@ table.table.table-hover
 							|&nbsp
 							=link_to("Editar", edit_categoria_path(categoria.id))
 							|&nbsp
-							=link_to("Excluir", categoria, :method => :delete, :confirm => "Tem certeza de que deseja excluir a categoria #{categoria.nome}?")
+							=link_to("Excluir", categoria_path(categoria.id), :method => :delete, :confirm => "Tem certeza de que deseja excluir a categoria #{categoria.nome}?")
 		- else
 			tbody
 				tr#vazia

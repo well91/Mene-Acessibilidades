@@ -1,0 +1,26 @@
+.titulo
+  h2 Objetos
+
+.menu
+  = link_to("Cadastrar objetos", new_objeto_path)
+
+table.table.table-hover
+  thead
+    tr
+      th Objeto
+      th Local
+      th Categoria
+      th Ações
+  - if @objetos.length > 0 
+    tbody
+      -@objetos.each do |objeto|
+        tr id="#{objeto.id}"
+          td =objeto.nome
+          td =objeto.local.nome
+          td =objeto.categoria.nome
+          td 
+            =link_to("Detalhar",objeto_path(objeto.id))
+            |&nbsp
+            =link_to("Editar", edit_objeto_path(objeto.id))
+            |&nbsp
+            =link_to("Excluir", objeto_path(objeto.id), :method => :delete, :confirm => "Tem certeza de que deseja excluir o objeto #{objeto.nome}?")

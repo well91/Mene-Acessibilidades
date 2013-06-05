@@ -2,7 +2,9 @@ class Objeto < ActiveRecord::Base
   belongs_to :local
   belongs_to :categoria
   has_many :inspecoes
-  attr_accessible :nome
+  attr_accessible :nome, :local_id, :categoria_id
+
+
 
   validates :nome, :presence => true, :length => { :minimum => 3 }
   validate :categoria_inexistente
