@@ -2,7 +2,7 @@ class Objeto < ActiveRecord::Base
   belongs_to :local
   belongs_to :categoria
   has_many :inspecoes
-  attr_accessible :nome, :local_id, :categoria_id
+  attr_accessible :nome, :local_id, :categoria_id, :foto
 
 
 
