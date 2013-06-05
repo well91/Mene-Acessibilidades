@@ -1,0 +1,6 @@
+= simple_form_for local, :html => {:class => 'form-inline'} do |form_builder|
+	=form_builder.input :nome
+
+	.form_actions
+	=form_builder.submit
+	= link_to 'Voltar', locais_path

@@ -6,5 +6,6 @@ Mene::Application.routes.draw do
   		get 'remover_caracteristica'
   	end
   end
-  resources :locais, :objetos
+  resources :locais, :except => :show
+  resources :objetos
 end

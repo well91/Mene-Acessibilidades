@@ -1,0 +1,25 @@
+index.html.slim.titulo
+	h2 Locais
+
+.menu
+	= link_to("Cadastrar local", new_local_path)
+
+table.table.table-hover
+		thead
+			tr
+				th Locais
+				th Ações
+		- if @locais.length > 0 
+			tbody
+				-@locais.each do |local|
+					tr id="#{local.id}"
+						td =local.nome
+						td 
+							=link_to("Editar", edit_local_path(local.id))
+							|&nbsp
+							=link_to("Excluir", local, :method => :delete, :confirm => "Tem certeza de que deseja excluir a local #{local.nome}?")
+		- else
+			tbody
+				tr#vazia
+					td colspan=2
+						| Não existem locais cadastrados.

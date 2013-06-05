@@ -17,6 +17,6 @@ class InspetoresController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 end	
