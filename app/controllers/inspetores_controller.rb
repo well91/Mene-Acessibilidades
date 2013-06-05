@@ -1,1 +1,3 @@
-inspetores_controller.rb
+class InspetoresController < ApplicationController
+
+end	

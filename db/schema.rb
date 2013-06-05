@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601204928) do
+ActiveRecord::Schema.define(:version => 20130605115241) do
 
   create_table "caracteristicas", :force => true do |t|
     t.string   "nome"
@@ -42,9 +42,22 @@ ActiveRecord::Schema.define(:version => 20130601204928) do
 
   create_table "gerentes", :force => true do |t|
     t.string   "nome"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "gerentes", ["email"], :name => "index_gerentes_on_email", :unique => true
+  add_index "gerentes", ["reset_password_token"], :name => "index_gerentes_on_reset_password_token", :unique => true
 
   create_table "inspecoes", :force => true do |t|
     t.date     "data"
@@ -60,9 +73,22 @@ ActiveRecord::Schema.define(:version => 20130601204928) do
 
   create_table "inspetores", :force => true do |t|
     t.string   "nome"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "inspetores", ["email"], :name => "index_inspetores_on_email", :unique => true
+  add_index "inspetores", ["reset_password_token"], :name => "index_inspetores_on_reset_password_token", :unique => true
 
   create_table "locais", :force => true do |t|
     t.string   "nome"
