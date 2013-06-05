@@ -34,6 +34,10 @@ class CategoriasController < ApplicationController
   end
 
   def criar_caracteristica
+    @categoria = Categoria.find(params[:id])
+    @categoria.update_attributes! params[:categoria]
+    @categoria.caracteristicas.build
+    render :edit
   end
 
   def remover_caracteristica

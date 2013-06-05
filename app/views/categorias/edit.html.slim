@@ -3,3 +3,4 @@
 
 .form
 	= render :partial => 'form_categoria', :locals => {:@categoria => @categoria}
+	= link_to "Adicionar Caracteristica", criar_caracteristica_categoria_path(@categoria.id)
