@@ -3,7 +3,6 @@ class Inspecao < ActiveRecord::Base
   belongs_to :objeto
   has_many :detalhes_inspecao
   attr_accessible :data, :status
-  attr_accessor :status
 
   #STATUS DE INSPECAO
   APROVADA = 1
@@ -36,19 +35,19 @@ class Inspecao < ActiveRecord::Base
   end
 
   def aprovar_inspecao
-    write_attribute(:status,APROVADA)
+   self.status = APROVADA
   end
 
   def reprovar_inspecao
-    write_attribute(:status, REPROVADA)
+   self.status =  REPROVADA
   end
 
   def reagendar_inspecao
-    write_attribute(:status, REAGENDADA)
+   self.status =  REAGENDADA
   end
 
   def marcar_como_pendente
-    write_attribute(:status,PENDENTE)
+   self.status = PENDENTE
   end
 
   def self.buscar_inspecoes_entre data_inicial, data_final
