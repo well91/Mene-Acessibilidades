@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605115241) do
+ActiveRecord::Schema.define(:version => 20130605222454) do
 
   create_table "caracteristicas", :force => true do |t|
     t.string   "nome"
@@ -96,15 +96,7 @@ ActiveRecord::Schema.define(:version => 20130605115241) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "objetos", :force => true do |t|
-    t.string   "nome"
-    t.integer  "local_id"
-    t.integer  "categoria_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "objetos", ["categoria_id"], :name => "index_objetos_on_categoria_id"
-  add_index "objetos", ["local_id"], :name => "index_objetos_on_local_id"
+# Could not dump table "objetos" because of following StandardError
+#   Unknown type 'file' for column 'foto'
 
 end
