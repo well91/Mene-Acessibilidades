@@ -1,0 +1,27 @@
+.titulo
+	h2 Categorias
+
+.menu
+	= link_to("Cadastrar categoria", new_categoria_path)
+
+table
+		thead
+			tr
+				th Categoria
+				th Ações
+		- if @categorias.length > 0 
+			tbody
+				-@categorias.each do |categoria|
+					tr id="#{categoria.id}"
+						td =categoria.nome
+						td 
+							=link_to("Detalhar",categoria_path(categoria.id))
+							|&nbsp
+							=link_to("Editar", edit_categoria_path(categoria.id))
+							|&nbsp
+							=link_to("Excluir", nil)
+		- else
+			tbody
+				tr#vazia
+					td colspan=2
+						| Não existem categorias cadastradas.

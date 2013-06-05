@@ -1,0 +1,12 @@
+.titulo
+	h2 = "Categoria #{@categoria.nome}"
+
+.info
+	.caracteristicas
+		h3 = "Características de #{@categoria.nome}" 
+		ul
+			- @categoria.caracteristicas.each do |caracteristica|
+				li = caracteristica.nome
+
+.menu
+	= link_to("Voltar", categorias_path)

@@ -1,7 +1,9 @@
 class Categoria < ActiveRecord::Base
   has_many :caracteristicas
   has_many :objetos
-  attr_accessible :nome
+  attr_accessible :nome, :caracteristicas_attributes
 
-  validates :nome, :presence => true, :length => {:minimun => 3}
+  accepts_nested_attributes_for :caracteristicas, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
+
+  validates :nome, :presence => true, :length => {:minimum => 3}
 end

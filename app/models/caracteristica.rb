@@ -2,12 +2,8 @@
 class Caracteristica < ActiveRecord::Base
   belongs_to :categoria
   has_many :detalhes_inspecao
-  attr_accessible :nome
+  attr_accessible :nome, :categoria
 
-  validates :nome, :presence => true, :length => {:minimum => 3}
-  validate :categoria_inexistente
+  validates :nome, :length => {:minimum => 3}
 
-  def categoria_inexistente
-	  errors.add(:categoria_id, "Categoria inexistente") if Categoria.where(:id => categoria_id).empty? 	 
-  end
 end
