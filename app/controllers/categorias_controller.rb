@@ -28,9 +28,10 @@ class CategoriasController < ApplicationController
     redirect_to categorias_path
   end
 
-  def delete
+  def destroy
     @categoria = Categoria.find(params[:id])
     @categoria.destroy
+    redirect_to categorias_path
   end
 
   def criar_caracteristica

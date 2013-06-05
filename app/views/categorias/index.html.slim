@@ -19,7 +19,7 @@ table
 							|&nbsp
 							=link_to("Editar", edit_categoria_path(categoria.id))
 							|&nbsp
-							=link_to("Excluir", nil)
+							=link_to("Excluir", categoria, :method => :delete, :confirm => "Tem certeza de que deseja excluir a categoria #{categoria.nome}?")
 		- else
 			tbody
 				tr#vazia
