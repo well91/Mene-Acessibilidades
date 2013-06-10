@@ -19,8 +19,8 @@ table.table.table-hover
           td =objeto.local.nome
           td =objeto.categoria.nome
           td 
-            =link_to("Detalhar",objeto_path(objeto.id))
+            =link_to("Detalhar",objeto_path(objeto.id), :class => 'botao vermelho')
             |&nbsp
-            =link_to("Editar", edit_objeto_path(objeto.id))
+            =link_to("Editar", edit_objeto_path(objeto.id), :class => 'botao laranja ')
             |&nbsp
             =link_to("Excluir", objeto_path(objeto.id), :method => :delete, :confirm => "Tem certeza de que deseja excluir o objeto #{objeto.nome}?")
