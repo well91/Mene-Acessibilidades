@@ -96,7 +96,19 @@ ActiveRecord::Schema.define(:version => 20130605225015) do
     t.datetime "updated_at", :null => false
   end
 
-# Could not dump table "objetos" because of following StandardError
-#   Unknown type 'file' for column 'foto'
+  create_table "objetos", :force => true do |t|
+    t.string   "nome"
+    t.integer  "local_id"
+    t.integer  "categoria_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
+  end
+
+  add_index "objetos", ["categoria_id"], :name => "index_objetos_on_categoria_id"
+  add_index "objetos", ["local_id"], :name => "index_objetos_on_local_id"
 
 end
