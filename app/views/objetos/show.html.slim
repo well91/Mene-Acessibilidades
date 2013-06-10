@@ -4,7 +4,8 @@
 .detalhes
   h3 Detalhes
   ul
-  	li = image_tag@objeto.foto.url
+  	- if @objeto.foto?
+  		li = image_tag @objeto.foto.url
     li = "Local: #{@objeto.local.nome}"
     li = "Categoria: #{@objeto.categoria.nome}"
 
