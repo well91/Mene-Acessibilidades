@@ -1,9 +1,4 @@
 class Inspecao < ActiveRecord::Base
-  belongs_to :inspetor
-  belongs_to :objeto
-  has_many :detalhes_inspecao
-  attr_accessible :data, :status
-
   #STATUS DE INSPECAO
   APROVADA = 1
   REPROVADA = 2
@@ -11,11 +6,18 @@ class Inspecao < ActiveRecord::Base
   REAGENDADA = 4
 
   INSPECOES_STATUS = {
-  	APROVADA => "Aprovada",
-  	REPROVADA => "Reprovada",
-  	PENDENTE => "Pendente",
-  	REAGENDADA => "Reagendada"
+    APROVADA => "Aprovada",
+    REPROVADA => "Reprovada",
+    PENDENTE => "Pendente",
+    REAGENDADA => "Reagendada"
   }
+
+  belongs_to :inspetor
+  belongs_to :objeto
+  has_many :detalhes_inspecao, :class_name => 'DetalheInspecao'
+  attr_accessible :data, :status
+
+
 
   validate :inspetor_invalido
   validate :objeto_invalido

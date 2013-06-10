@@ -8,4 +8,5 @@ Mene::Application.routes.draw do
   end
   resources :locais, :except => :show
   resources :objetos
+  resources :inspecoes
 end
