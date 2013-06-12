@@ -33,8 +33,8 @@
             <a class="home" href="#home"></a>
             <div id="menu">
                 <ul class="navigation">
-                    <li><a href="#about" class="selected"><%= image_tag("templatemo_aboutus.png", :alt => "About Us")%></a></li>
-                    <li><a href="#services"><%= image_tag("templatemo_services.png", :alt => "Services")%></a></li>
+                    <li><%=link_to image_tag("templatemo_aboutus.png"), objetos_path%></a></li>
+                    <li><%=link_to image_tag("templatemo_services.png"), locais_path%></a></li>
                     <li><a href="#contact"><%= image_tag("templatemo_contactus.png", :alt => "Contact")%></a></li>
                 </ul>
             </div>

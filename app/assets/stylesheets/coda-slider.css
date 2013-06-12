@@ -116,7 +116,7 @@ a.home {
 .scrollContainer div.panel {
     width: 740px;
     height: 380px;
-	overflow: hidden;
+	overflow: auto;
 }
 
 ul.navigation {

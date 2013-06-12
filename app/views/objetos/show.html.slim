@@ -1,12 +1,14 @@
 .titulo
   h2 = @objeto.nome
 
+.imagem_objeto
+  = image_tag@objeto.foto.url if  @objeto.foto?
 .detalhes
   h3 Detalhes
   ul
-  	li = image_tag@objeto.foto.url
     li = "Local: #{@objeto.local.nome}"
     li = "Categoria: #{@objeto.categoria.nome}"
+
 
 .menu
   = link_to("Voltar", objetos_path )
