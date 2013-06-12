@@ -16,22 +16,20 @@
        <div id="content">
        <div id="header">
            	<h1><a></a></h1>
-               <div id="social_box">
-                   <a href="#"><%= image_tag("facebook.png")%> </a>
-                   <a href="#"><%= image_tag "flickr.png" %></a>
-                   <a href="#"><%= image_tag "myspace.png" %></a>
-                   <a href="#"><%= image_tag "twitter.png" %></a>
-                   <a href="#"><%= image_tag "youtube.png" %></a>
-               </div>
            </div>
 
        	<div class="scrollRolante">
        	  <div class="scrollContainer">
                <div class="panel" id="home">
+                <%if flash[:notice]%>
+                <div class='alert alert-success'>
+                  <p>Sessão encerrada com sucesso.</p>
+                </div>
+                <%end%>
                	<h2>Mene Acessibilidade</h2>   
 <div class="col_400 float_l">
                    	<p><em>Sistema de submiss&atilde;o de inspe&ccedil;&otilde;es de equipamentos de acessibilidade nos Campi da USP.</em></p>	
-                       <%= image_tag "templatemo_image_01.jpg"%>        
+                       <%= image_tag "minerva.jpg"%>        
                  	</div>
                  	<div class="col_280 float_r">   
                	 <h3>Nossos servi&ccedil;os</h3>

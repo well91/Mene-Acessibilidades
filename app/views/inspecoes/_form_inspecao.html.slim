@@ -1,9 +1,9 @@
-= simple_form_for inspecao, :html => {:multipart => true} do |form_builder|
-	=form_builder.input :nome
+= simple_form_for [objeto,inspecao], :html => {:class => 'form-inline', :multipart => true} do |form_builder|
 	p Detalhes da inspecao da Categoria 
-	= form_builder.simple_fields_for :caracteristicas do |f_caracteristica_builder|
-		=f_caracteristica_builder.input :nome
-		=f_caracteristica_builder.input :_destroy, as: :boolean, label: 'remover caracteristica'
+	= form_builder.simple_fields_for :detalhes_inspecao do |f_detalhe_builder|
+		=f_detalhe_builder.input :aprovada, label: 'Aprovada'
+		=f_detalhe_builder.input :comentario
+		
 
 	.form_actions
 		=form_builder.submit

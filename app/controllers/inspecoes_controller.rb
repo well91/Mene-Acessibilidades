@@ -1,6 +1,6 @@
 class InspecoesController < ApplicationController
   def index
-   @inspecoes = Inspecao.all
+   @inspecoes = Objeto.find(params[:objeto_id]).inspecoes.all
   end
 
   def show
@@ -8,8 +8,9 @@ class InspecoesController < ApplicationController
   end
 
   def new
-    @objeto = Objeto.find(params[:id])
+    @objeto = Objeto.find(params[:objeto_id])
     @inspecao = Inspecao.new
+    @objeto.categoria.caracteristicas.length.times {@inspecao.detalhes_inspecao.build}
   end
 
   def create

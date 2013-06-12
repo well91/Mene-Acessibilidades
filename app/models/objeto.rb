@@ -3,7 +3,7 @@ class Objeto < ActiveRecord::Base
   belongs_to :categoria
   has_many :inspecoes
   attr_accessible :nome, :local_id, :categoria_id, :foto
-  has_attached_file :foto, :styles => { :medium => "300x300", :thumb => "100x100"}
+  has_attached_file :foto
 
 
   validates :nome, :presence => true, :length => { :minimum => 3 }

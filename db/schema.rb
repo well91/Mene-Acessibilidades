@@ -49,11 +49,6 @@ ActiveRecord::Schema.define(:version => 20130612141605) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
   end
 
   add_index "gerentes", ["email"], :name => "index_gerentes_on_email", :unique => true
@@ -84,11 +79,6 @@ ActiveRecord::Schema.define(:version => 20130612141605) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
   end
 
   add_index "inspetores", ["email"], :name => "index_inspetores_on_email", :unique => true

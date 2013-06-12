@@ -3,8 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sistema Mene Acessibilidade</title>
-<meta name="keywords" content="vertical theme, free css template" />
-<meta name="description" content="Vertical Theme, Free CSS Template by templatemo.com" />
+
 
 
     <%= javascript_include_tag "application", :media => "all"%>
@@ -23,7 +22,7 @@
 
 </head>
 <body>
-    
+
     <div id="slider">
     <div id="templatemo_wrapper">
         
@@ -42,19 +41,33 @@
     
         <div id="content">
           <div id="header">
-                <h1><a href="">Free CSS Templates</a></h1>
-                <div id="social_box">
-                    <a href="http://www.facebook.com/templatemo"><%= image_tag("facebook.png", :alt => "facebook")%></a>
-                    <a href="#"><%= image_tag("flickr.png", :alt => "flickr")%></a>
-                    <a href="#"><%= image_tag("myspace.png", :alt => "myspace")%></a>
-                    <a href="#"><%= image_tag("twitter.png", :alt => "twitter")%></a>
-                    <a href="#"><%= image_tag("youtube.png", :alt => "youtube")%></a>
-                </div>
+                <h1><%= link_to 'home', root_path %></h1>
             </div>
-            
+                <div class="salutation">
+                    <% if current_inspetor || current_gerente %>
+                        <p> Bem-vindo <%=current_gerente.nome %>
+                        </p>
+                        <p> Clique aqui para <%=link_to 'SAIR', destroy_gerente_session_path, :method => :delete%>
+                        </p>
+                    <%else%>
+                        <p>
+                        Faça o login como <%=link_to 'Gerente', new_gerente_session_path%> ou como <%= link_to 'Inspetor', new_inspetor_session_path  %>
+                     </p>
+                    <%end%>
+                </div>
+
             <div class="scroll">
               <div class="scrollContainer">
                 <div class="panel" id="home">
+                    <% if flash[:alert]%>
+                    <div class='alert alert-error'>
+                        <%=flash[:alert]%>
+                    </div>
+                    <% end %>
+                    <% if flash[:notice]%>
+                    <div class='alert alert-success'> Login realizado com sucesso.
+                    </div >
+                    <%end%>
                     <%= yield %>
                 </div><!-- end of home -->
             </div><!-- end of scroll -->

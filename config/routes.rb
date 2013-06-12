@@ -1,7 +1,8 @@
 Mene::Application.routes.draw do
   root :to => 'home#index'
   
-  devise_for :inspetores, :gerentes
+  devise_for :inspetores
+  devise_for :gerentes
   resources :categorias do
   	member do 
   		get 'criar_caracteristica'
