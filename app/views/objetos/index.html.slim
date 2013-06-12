@@ -2,7 +2,7 @@
   h2 Objetos
 
 .menu
-  = link_to("Cadastrar objetos", new_objeto_path)
+  = link_to("Cadastrar objetos", new_objeto_path, :class => 'botao cadastrar')
 
 table.table.table-hover
   thead
@@ -19,8 +19,8 @@ table.table.table-hover
           td =objeto.local.nome
           td =objeto.categoria.nome
           td 
-            =link_to("Detalhar",objeto_path(objeto.id), :class => 'botao vermelho')
+            =link_to("Detalhar",objeto_path(objeto.id), :class => 'botao detalhar')
             |&nbsp
-            =link_to("Editar", edit_objeto_path(objeto.id), :class => 'botao laranja ')
+            =link_to("Editar", edit_objeto_path(objeto.id), :class => 'botao editar')
             |&nbsp
-            =link_to("Excluir", objeto_path(objeto.id), :method => :delete, :confirm => "Tem certeza de que deseja excluir o objeto #{objeto.nome}?")
+            =link_to("Excluir", objeto_path(objeto.id), :method => :delete, :class => 'botao excluir', :confirm => "Tem certeza de que deseja excluir o objeto #{objeto.nome}?")
