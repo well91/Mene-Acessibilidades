@@ -29,6 +29,10 @@ a.home {
 	clear: both;
 	width: 50px;
 	height: 480px;
+	li {
+		line-height: 60px;
+		color: white;
+	}
 }
 
 #content {

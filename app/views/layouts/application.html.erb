@@ -32,9 +32,10 @@
             <a class="home" href="#home"></a>
             <div id="menu">
                 <ul class="navigation">
-                    <li><%=link_to image_tag("templatemo_aboutus.png"), objetos_path%></a></li>
-                    <li><%=link_to image_tag("templatemo_services.png"), locais_path%></a></li>
-                    <li><a href="#contact"><%= image_tag("templatemo_contactus.png", :alt => "Contact")%></a></li>
+                    <li><%=link_to "Objetos", objetos_path, :class => 'vertical', :style => 'color:white;'%></li>
+                    <li><%=link_to "Locais", locais_path, :class => 'vertical', :style => 'color:white;'%></li>
+                    <li><%= link_to "Gerente", nil ,:class => 'vertical', :style => 'color:white;'%></li>
+                    <li><%= link_to "Inpetor", nil ,:class => 'vertical', :style => 'color:white;'%></li>
                 </ul>
             </div>
         </div> <!-- end of sidebar --> 
