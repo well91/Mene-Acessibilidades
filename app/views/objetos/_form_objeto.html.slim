@@ -1,4 +1,4 @@
-= simple_form_for objeto, :html => {:class => 'form-inline', :multipart => true} do |form_builder|
+= simple_form_for objeto, :html => { :multipart => true} do |form_builder|
   =form_builder.input :nome
 
   =form_builder.association :local, label_method: :nome, value_method: :id, include_blank: false

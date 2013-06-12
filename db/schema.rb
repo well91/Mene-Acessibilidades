@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605225015) do
+ActiveRecord::Schema.define(:version => 20130612141605) do
 
   create_table "caracteristicas", :force => true do |t|
     t.string   "nome"
@@ -64,8 +64,12 @@ ActiveRecord::Schema.define(:version => 20130605225015) do
     t.integer  "status"
     t.integer  "inspetor_id"
     t.integer  "objeto_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
   end
 
   add_index "inspecoes", ["inspetor_id"], :name => "index_inspecoes_on_inspetor_id"
