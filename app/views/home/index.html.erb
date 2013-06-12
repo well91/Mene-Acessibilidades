@@ -25,7 +25,7 @@
                </div>
            </div>
 
-       	<div class="scroll">
+       	<div class="scrollRolante">
        	  <div class="scrollContainer">
                <div class="panel" id="home">
                	<h2>Mene Acessibilidade</h2>   
@@ -37,7 +37,6 @@
                	 <h3>Nossos servi&ccedil;os</h3>
                        
                        <ul class="service_list">
-                           <li><a href="#" class="service_six">Login no sistema</a></li>
                            <li><a href="#contact" class="service_five">Fale conosco</a></li>
                        </ul>
                    </div>                
@@ -46,7 +45,7 @@
        	    <div class="panel" id="about">
                	<h2>Sobre n&oacute;s</h2>
        	      	<div class="col_400 float_l">
-                       <%= image_tag "templatemo_image_02.jpg", :class => 'image_wrapper' %>
+                       <%= image_tag "minerva.jpg", :class => 'image_wrapper' %>
                        <p><em>Sistema criado para o curso PCS2419 - Laborat&oacuterio de Engenharia de Software I;.</em></p>
                        <p>Disciplina do curso de Engenharia El&eacute;trica com &Ecirc;nfase em Computa&ccedil;&atilde;o. Para entender mais sobre o curso entre no link: <a href="http://www.poli.usp.br/">Escola Politecnica da USP</a></p>
      	        	</div>
@@ -76,7 +75,8 @@
                    	  <h3>Nossos servi&ccedil;os</h3>
                        
                        <ul class="service_list">
-                           <li><a href="#" class="service_six">Login no sistema</a></li>
+                           <li><%= link_to 'Login como gerente', new_gerente_session_path, :class => 'botao azul' %></li>
+                           <li><%= link_to 'Login como inspetor', new_inspetor_session_path, :class => 'botao verde' %></li>
                            <li><a href="#contact" class="service_five">Fale conosco</a></li>
                        </ul>
                    </div>                
@@ -86,6 +86,7 @@
      	      	</div> <!-- end of services -->
 
        	   <div class="panel" id="contact">
+<br />
 <br />
        	      <h2>Contato</h2>
        	      <div class="cleaner_h10"></div>

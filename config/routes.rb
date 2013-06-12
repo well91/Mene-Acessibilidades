@@ -1,4 +1,6 @@
 Mene::Application.routes.draw do
+  root :to => 'home#index'
+  
   devise_for :inspetores, :gerentes
   resources :categorias do
   	member do 
@@ -10,5 +12,5 @@ Mene::Application.routes.draw do
   resources :objetos do
   	resources :inspecoes
   end
-  root :to => 'home#index'
+  
 end

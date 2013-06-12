@@ -111,7 +111,7 @@ a.home {
 .scroll {
     width: 740px;
     height: 380px;
-	margin: 50px;
+		margin: 50px;
     overflow: auto;
     position: relative;
     clear: left;
@@ -121,6 +121,15 @@ a.home {
     width: 740px;
     height: 380px;
 	overflow: auto;
+}
+
+.scrollRolante {
+    width: 740px;
+    height: 380px;
+		margin: 50px;
+    overflow: hidden;
+    position: relative;
+    clear: left;
 }
 
 ul.navigation {
