@@ -10,5 +10,5 @@ Mene::Application.routes.draw do
   resources :objetos do
   	resources :inspecoes
   end
-
+  root :to => 'home#index'
 end
