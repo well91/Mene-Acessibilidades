@@ -2,7 +2,7 @@
 	h2 Locais
 
 .menu
-	= link_to("Cadastrar local", new_local_path)
+	= link_to("Cadastrar local", new_local_path, :class => 'botao cadastrar')
 
 table.table.table-hover
 		thead
@@ -15,9 +15,9 @@ table.table.table-hover
 					tr id="#{local.id}"
 						td =local.nome
 						td 
-							=link_to("Editar", edit_local_path(local.id))
+							=link_to("Editar", edit_local_path(local.id), :class => 'botao editar')
 							|&nbsp
-							=link_to("Excluir", local_path(local.id), :method => :delete, :confirm => "Tem certeza de que deseja excluir a local #{local.nome}?")
+							=link_to("Excluir", local_path(local.id), :method => :delete, :class => 'botao excluir', :confirm => "Tem certeza de que deseja excluir a local #{local.nome}?")
 		- else
 			tbody
 				tr#vazia

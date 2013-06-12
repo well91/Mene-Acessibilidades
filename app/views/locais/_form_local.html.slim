@@ -2,5 +2,5 @@
 	=form_builder.input :nome
 
 	.form_actions
-		=form_builder.submit
-		= link_to 'Voltar', locais_path
+		=form_builder.submit :class => 'botao submit'
+		= link_to('Voltar', locais_path, :class => 'botao voltar')

@@ -6,5 +6,5 @@
   =form_builder.file_field :foto 
 
   .form_actions
-	  =form_builder.submit
-	  = link_to 'Voltar', objetos_path
+	  =form_builder.submit :class => 'botao submit' 
+	  = link_to('Voltar', objetos_path, :class => 'botao voltar')

@@ -2,7 +2,7 @@
 	h2 Categorias
 
 .menu
-	= link_to("Cadastrar categoria", new_categoria_path)
+	= link_to("Cadastrar categoria", new_categoria_path, :class => 'botao cadastrar')
 
 table.table.table-hover
 		thead
@@ -15,11 +15,11 @@ table.table.table-hover
 					tr id="#{categoria.id}"
 						td =categoria.nome
 						td 
-							=link_to("Detalhar",categoria_path(categoria.id))
+							=link_to("Detalhar",categoria_path(categoria.id), :class => 'botao detalhar')
 							|&nbsp
-							=link_to("Editar", edit_categoria_path(categoria.id))
+							=link_to("Editar", edit_categoria_path(categoria.id), :class => 'botao editar')
 							|&nbsp
-							=link_to("Excluir", categoria_path(categoria.id), :method => :delete, :confirm => "Tem certeza de que deseja excluir a categoria #{categoria.nome}?")
+							=link_to("Excluir", categoria_path(categoria.id), :method => :delete, :class => 'botao excluir', :confirm => "Tem certeza de que deseja excluir a categoria #{categoria.nome}?")
 		- else
 			tbody
 				tr#vazia
