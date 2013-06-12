@@ -1,4 +1,4 @@
-= simple_form_for inspecao, :html => {:class => 'form-inline', :multipart => true} do |form_builder|
+= simple_form_for inspecao, :html => {:multipart => true} do |form_builder|
 	=form_builder.input :nome
 	p Detalhes da inspecao da Categoria 
 	= form_builder.simple_fields_for :caracteristicas do |f_caracteristica_builder|

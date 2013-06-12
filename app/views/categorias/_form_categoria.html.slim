@@ -1,4 +1,4 @@
-= simple_form_for @categoria, :html =>{:class => 'form-inline'} do |form_builder|
+= simple_form_for @categoria do |form_builder|
 	=form_builder.input :nome
 	p Características da Categoria 
 	= form_builder.simple_fields_for :caracteristicas do |f_caracteristica_builder|
