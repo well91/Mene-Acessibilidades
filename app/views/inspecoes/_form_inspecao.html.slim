@@ -1,0 +1,10 @@
+= simple_form_for inspecao, :html => {:class => 'form-inline', :multipart => true} do |form_builder|
+	=form_builder.input :nome
+	p Detalhes da inspecao da Categoria 
+	= form_builder.simple_fields_for :caracteristicas do |f_caracteristica_builder|
+		=f_caracteristica_builder.input :nome
+		=f_caracteristica_builder.input :_destroy, as: :boolean, label: 'remover caracteristica'
+
+	.form_actions
+		=form_builder.submit
+		= link_to("Voltar", categorias_path)

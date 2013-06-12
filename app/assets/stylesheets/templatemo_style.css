@@ -19,6 +19,11 @@ a, a:link, a:visited {
 	text-decoration: none;
 }
 
+a.botao, a.botao:link, a.botao:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
 a:hover { 
 	text-decoration: underline;
 }
