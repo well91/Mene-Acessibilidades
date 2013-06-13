@@ -1,0 +1,12 @@
+.input.boolean.optional.inspecao_detalhes_inspecao_aprovada
+	input type="hidden" name="inspecao[detalhes_inspecao_attributes][#{index}][caracteristica_id]" value="#{caracteristica.id}"
+	label for="inspecao_detalhes_inspecao_attributes_#{index}_aprovada"
+		= caracteristica.nome
+	input name="inspecao[detalhes_inspecao_attributes][#{index}][aprovada]" type="hidden" value="0"
+	input.boolean.optional id="inspecao_detalhes_inspecao_attributes_#{index}_aprovada" name="inspecao[detalhes_inspecao_attributes][#{index}][aprovada]" type="checkbox" value="1"
+	label.boolean.optional for="inspecao_detalhes_inspecao_attributes_#{index}_aprovada"
+		|Aprovada
+.input.string.optional.inspecao_detalhes_inspecao_comentario
+	label.string.optional for="inspecao_detalhes_inspecao_attributes_#{index}_comentario"
+		| Comentario
+	input.string.optional id="inspecao_detalhes_inspecao_attributes_#{index}_comentario" maxlength="255" name="inspecao[detalhes_inspecao_attributes][#{index}][comentario]" size="50" type="text"

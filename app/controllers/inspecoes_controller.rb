@@ -10,11 +10,20 @@ class InspecoesController < ApplicationController
   def new
     @objeto = Objeto.find(params[:objeto_id])
     @inspecao = Inspecao.new
-    @objeto.categoria.caracteristicas.length.times {@inspecao.detalhes_inspecao.build}
+    3.times {@inspecao.detalhes_inspecao.build}
   end
 
   def create
-    @inspecao = Inspecao.new(params[:inspecao])
+    begin
+      @inspecao = Inspecao.new(params[:inspecao])
+      @inspecao.objeto_id = params[:objeto_id]
+      @inspecao.save
+      redirect_to objetos_path
+    rescue
+      @inspecao = Inspecao.new(params[:inspecao])
+      @objeto = Objeto.find(params[:objeto_id])
+      render :new
+    end
   end
 
   def edit

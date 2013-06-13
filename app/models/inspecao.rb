@@ -19,7 +19,7 @@ class Inspecao < ActiveRecord::Base
   belongs_to :inspetor
   belongs_to :objeto
   has_many :detalhes_inspecao, :class_name => 'DetalheInspecao'
-  attr_accessible :data, :status, :foto, :detalhes_inspecao_attributes
+  attr_accessible :data, :status, :foto, :inspetor_id, :objeto_id, :detalhes_inspecao_attributes
   has_attached_file :foto
   accepts_nested_attributes_for :detalhes_inspecao
 

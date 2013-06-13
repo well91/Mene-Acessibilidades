@@ -1,10 +1,12 @@
 = simple_form_for [objeto,inspecao], :html => {:class => 'form-inline', :multipart => true} do |form_builder|
+	= form_builder.input :inspetor_id
 	p Detalhes da inspecao da Categoria 
-	= form_builder.simple_fields_for :detalhes_inspecao do |f_detalhe_builder|
-		=f_detalhe_builder.input :aprovada, label: 'Aprovada'
-		=f_detalhe_builder.input :comentario
-		
+	- objeto.categoria.caracteristicas.each_with_index do |caracteristica, indice|
+		= render :partial => 'form_detalhe_inspecao', :locals => {:index => indice, :caracteristica =>  caracteristica}
+	
+	= form_builder.input :status, :value => 3
+	= form_builder.input :objeto_id, :value => params[:objeto_id]
 
 	.form_actions
 		=form_builder.submit
-		= link_to("Voltar", categorias_path)
+		= link_to("Voltar", objetos_path)
